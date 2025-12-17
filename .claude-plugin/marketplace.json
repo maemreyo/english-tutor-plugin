@@ -1,0 +1,13 @@
+{
+  "name": "maemreyo-english-tutor",
+  "owner": {
+    "name": "maemreyo"
+  },
+  "plugins": [
+    {
+      "name": "english-tutor",
+      "description": "English learning assistant and grammar structure analyst",
+      "source": "./workspace/english-tutor"
+    }
+  ]
+}

@@ -76,7 +76,7 @@ To use the version hosted on GitHub:
     }
     ```
 
-    `.claude-plugin/marketplace.json`:
+    **Root** `.claude-plugin/marketplace.json` (at repo root):
     ```json
     {
       "name": "maemreyo-english-tutor",
@@ -87,7 +87,7 @@ To use the version hosted on GitHub:
         {
           "name": "english-tutor",
           "description": "English learning assistant...",
-          "source": "./"
+          "source": "./workspace/english-tutor"
         }
       ]
     }
