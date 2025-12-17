@@ -7,7 +7,7 @@ Scan and fill content for English vocabulary files with `status: pending`.
 ### Parameters
 - `--path=<path>`: Custom path to vocabulary files directory
 - `--limit=<n>`: Limit total number of files to process
-- `--chunk=<n>`: Number of files to process per agent call (default: 5)
+- `--chunk=<n>`: Number of files to process per agent call (default: 8)
 - `--dry-run`: List files only, do not process
 - `--research`: Enable web search for additional context (uses more tokens)
 
@@ -35,7 +35,7 @@ Scan and fill content for English vocabulary files with `status: pending`.
 ## Phase 3: Processing (Batch Mode)
 
 4. **Process Files in Batches**
-   - Logic: Group the pending files into chunks of size `--chunk` (default: 5)
+   - Logic: Group the pending files into chunks of size `--chunk` (default: 8)
    - Use Task tool with subagent_type="english-tutor:vocab-analyst" (or "vocab-analyst" if running locally)
    - Prompt for each BATCH: "Analyze the following vocabulary files (Batch of X):
      {list_of_filenames_in_batch}
@@ -61,7 +61,7 @@ Scan and fill content for English vocabulary files with `status: pending`.
 ## Execution Examples
 
 ```bash
-# Process all pending files (default chunk: 5)
+# Process all pending files (default chunk: 8)
 /vocab
 
 # Process with larger chunks
