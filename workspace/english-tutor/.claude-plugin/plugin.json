@@ -1,11 +1,14 @@
 {
   "name": "english-tutor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "English learning assistant and grammar structure analyst",
   "commands": [
     "./commands/structure.md"
   ],
   "agents": [
     "./agents/structure-analyst.md"
+  ],
+  "skills": [
+    "./skills/english-grammar/SKILL.md"
   ]
 }

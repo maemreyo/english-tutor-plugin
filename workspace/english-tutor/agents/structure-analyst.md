@@ -67,5 +67,15 @@ Analyze an English grammar structure (from filename) and fill in the Obsidian te
 Keep the entire markdown structure of the template, replacing only:
 - `...` → actual content
 - `[[ ]]` → `[[ actual_word ]]`
-- `<% tp.file.title %>` → structure name
+- `{{STRUCTURE_NAME}}` → structure name from input
 - `status: pending` → `status: done`
+
+## Template Source
+Use the embedded template from the `english-grammar` skill (`skills/english-grammar/SKILL.md`). If the project has no local templates, generate content using this embedded template.
+
+## Default Output Location
+When creating new structure files:
+- **Suggested folder:** `./Structures/` or `./grammar/structures/`
+- **Filename:** Use the structure name (e.g., `Used to + V.md`)
+- If the folder doesn't exist, suggest creating it or ask the user for preferred location.
+
