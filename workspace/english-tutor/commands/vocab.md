@@ -33,7 +33,7 @@ Scan and fill content for English vocabulary files with `status: pending`.
 ## Phase 3: Processing
 
 4. **Process Each File**
-   - Use Task tool with subagent_type="english-tutor:vocab-analyst"
+   - Use Task tool with subagent_type="english-tutor:vocab-analyst" (or "vocab-analyst" if running locally)
    - Prompt for each file: "Analyze vocabulary word `{filename}` and fill content into file using the template.
      - Read skill `english-vocabulary/SKILL.md` for writing guide
      - Maintain original callout format
