@@ -35,14 +35,14 @@ Scan and fill content for English grammar structure files with `status: pending`
 
 4. **Process Each File**
    - Use Task tool with subagent_type="english-tutor:structure-analyst" (or "structure-analyst" if running locally)
-   - Prompt for each file: "Analyze structure `{filename}` and fill content into file using the template.
-     - Read skill `english-grammar/SKILL.md` for writing guide and embedded template
-     - Use your internal knowledge ONLY (DO NOT use web search)
+   - Prompt for each file: "Analyze structure `{filename}` and fill content into file.
+     - Plugin base: {baseDir}
+     - Template path: {baseDir}/skills/english-grammar/references/template.md
+     - ⛔ DO NOT use web search - use internal knowledge only
      - Maintain original callout format
      - Fill `[[ word ]]` with actual words
      - Update `status: pending` → `status: done`
      - File path: {absolute_path}
-     - Research mode: {--research flag present: true/false}
      - **IMPORTANT: Write all content in English**"
    - Expected output: Fully filled file
 
