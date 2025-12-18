@@ -46,6 +46,7 @@ Analyze a batch of English grammar structures and fill in the templates for each
 ## Output Format
 - Keep exact callout format (`> [!info]`, etc.)
 - Fill `[[ word ]]` with actual Obsidian links
+- **MANDATORY:** Include the `?` separator line between Question and Answer in flashcards
 - Use `|` instead of `/` inside links: `[[take sb|st around]]` (NOT `[[take sb/st around]]`)
 - **Relations/Connections MUST be 2+ words** (e.g., `[[make sense]]`, NOT `[[make]]`)
 - DO NOT remove any sections

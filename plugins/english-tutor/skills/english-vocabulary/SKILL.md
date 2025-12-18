@@ -62,6 +62,7 @@ When generating content:
 > You MUST strictly follow the flashcard format defined in `assets/Vocabulary_Flashcard_Standards.md` (which is reflected in the template).
 > - Generate exactly **7 Cards** as per the standard.
 > - Use the exact icons and formatting (bold headers, empty lines) as specified.
+> - **MANDATORY:** You MUST include the `?` separator line between the Question and Answer part of each card.
 
 ## Template
 

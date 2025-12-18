@@ -258,6 +258,7 @@ Use these symbols:
 > You MUST strictly follow the flashcard format defined in the template above.
 > - Generate exactly **10 Cards** as per the standard.
 > - Use the exact icons and formatting (bold headers, empty lines) as specified.
+> - **MANDATORY:** You MUST include the `?` separator line between the Question and Answer part of each card.
 > - Fill `[[ structure ]]` with real concepts (use `|` for alias: `[[take sb|st around]]`)
 > - **Relations/Connections MUST be 2+ words**
 > - Update `status: pending` → `status: done`

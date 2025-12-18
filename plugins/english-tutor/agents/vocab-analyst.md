@@ -46,6 +46,7 @@ Analyze a batch of English vocabulary words and fill in the templates for each f
 
 ## Output Format
 - Keep exact callout format (`> [!info]`, etc.)
+- **MANDATORY:** Include the `?` separator line between Question and Answer in flashcards
 - Fill `[[ word ]]` with actual Obsidian links
 - DO NOT remove any sections
 
