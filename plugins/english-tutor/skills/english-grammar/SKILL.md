@@ -1,6 +1,7 @@
 ---
 name: english-grammar
 description: English grammar analysis skill. Used when filling content for structure files in Obsidian vault following the standard template.
+allowed-tools: Read, Write, Edit
 ---
 
 # English Grammar Analysis Skill

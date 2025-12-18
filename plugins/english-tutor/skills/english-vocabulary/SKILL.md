@@ -1,6 +1,7 @@
 ---
 name: english-vocabulary
 description: English vocabulary analysis skill. Used when filling content for vocabulary files in Obsidian vault following the standard template.
+allowed-tools: Read, Write, Edit
 ---
 
 # English Vocabulary Analysis Skill
