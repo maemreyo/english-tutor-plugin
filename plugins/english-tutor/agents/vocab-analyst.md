@@ -2,6 +2,7 @@
 name: vocab-analyst
 description: English vocabulary analyst. Fills content for vocabulary files using internal knowledge only.
 model: inherit
+color: cyan
 ---
 
 You are an expert English linguist specializing in vocabulary analysis.
