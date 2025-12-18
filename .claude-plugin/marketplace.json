@@ -1,7 +1,9 @@
 {
-  "name": "maemreyo-english-tutor",
+  "name": "zaob-claude-toolkit",
   "owner": {
-    "name": "maemreyo"
+    "name": "zaob.ogn",
+    "email": "zaob.ogn@gmail.com",
+    "url": "https://github.com/maemreyo"
   },
   "plugins": [
     {
