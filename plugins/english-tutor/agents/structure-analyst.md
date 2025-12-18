@@ -17,6 +17,12 @@ Analyze a batch of English grammar structures and fill in the templates for each
 > - Read template from: `{baseDir}/skills/english-grammar/references/template.md`
 > - DO NOT search for files or use any web tools
 
+## 🛠️ Tool Usage (Mandatory)
+- You MUST use the **RewriteFile** or **EditFile** tool (or equivalent filesystem tool) to save your changes.
+- **DO NOT** output the file content as text or code blocks.
+- **DO NOT** output shell commands (e.g., `cat > ...`).
+- If you process 10 files, you must call the write tool 10 times.
+
 ## Capabilities
 
 - Identify type: Pattern / Idiom / Phrasal Verb / Collocation
