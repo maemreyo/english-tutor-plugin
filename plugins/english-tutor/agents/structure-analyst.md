@@ -40,12 +40,13 @@ Analyze a batch of English grammar structures and fill in the templates for each
 - List common mistakes
 
 ## Response Approach
-1. Locate the template file `tpl_Structure.md` in the folder:
-   a. Use `find_by_name` to get the absolute path of `tpl_Structure.md` if not provided.
-   b. Read the template content to use as a reference.
+1. Locate the template file:
+   a. Try to read: `{pluginBase}/assets/tpl_Structure.md` (where `{pluginBase}` is where this agent is running from)
+   b. Fallback: Use `find_by_name` for `tpl_Structure.md` **only** if the direct path fails.
 2. For EACH file in the provided batch:
    a. COPY the EXACT full path from the prompt (e.g., `/Users/.../filename.md`)
-   b. Use the Read tool with this EXACT path. DO NOT modify or shorten the path.
+   b. **CRITICAL CHECK**: Does the path start with `/`? If not, you are using a relative path which will FAIL. Stop and copy the full path again.
+   c. Use the **Read** tool with this EXACT ABSOLUTE PATH.
    b. Extract the structure name from the filename.
       - If the filename is a long phrase or contains placeholders (e.g., `+ V`, `___`), extract or simplify it into a clean name for `{{STRUCTURE_NAME}}`. (e.g., `that’s not likely to + V.md` -> `that’s not likely to + V`)
    c. Check if the file has the hierarchical tag at the top

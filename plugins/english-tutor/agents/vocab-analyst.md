@@ -41,12 +41,13 @@ Analyze a batch of English vocabulary words and fill in the templates for each f
 - List collocations
 
 ## Response Approach
-1. Locate the template file `tpl_Vocabulary.md` in the folder:
-   a. Use `find_by_name` to get the absolute path of `tpl_Vocabulary.md` if not provided.
-   b. Read the template content to use as a reference.
+1. Locate the template file:
+   a. Try to read: `{pluginBase}/assets/tpl_Vocabulary.md` (where `{pluginBase}` is where this agent is running from)
+   b. Fallback: Use `find_by_name` for `tpl_Vocabulary.md` **only** if the direct path fails.
 2. For EACH file in the provided batch:
    a. COPY the EXACT full path from the prompt (e.g., `/Users/.../filename.md`)
-   b. Use the Read tool with this EXACT path. DO NOT modify or shorten the path.
+   b. **CRITICAL CHECK**: Does the path start with `/`? If not, you are using a relative path which will FAIL. Stop and copy the full path again.
+   c. Use the **Read** tool with this EXACT ABSOLUTE PATH.
    c. Extract the word from the filename (e.g., `word.md` -> `word`).
       - If the filename is a long phrase or contains placeholders (e.g., `___`), extract the core keyword as the `{{WORD}}` for the content.
    c. Check if the file has the hierarchical tag at the top
