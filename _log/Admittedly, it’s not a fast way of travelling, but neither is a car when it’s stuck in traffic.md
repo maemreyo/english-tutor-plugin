@@ -1,80 +1,41 @@
+#flashcards/structure/grammar-foundation
+<!--
+Select one of the following tags to replace the line above:
+
+# Grammar Foundation
+#flashcards/structure/grammar-foundation/comparison
+#flashcards/structure/grammar-foundation/conditional
+#flashcards/structure/grammar-foundation/passive-voice
+#flashcards/structure/grammar-foundation/cohesion
+
+# Writing Patterns (Task 1)
+#flashcards/structure/writing-patterns/task-1/trend-language
+#flashcards/structure/writing-patterns/task-1/comparative-language
+#flashcards/structure/writing-patterns/task-1/map-describing
+#flashcards/structure/writing-patterns/task-1/process-cycle
+
+# Writing Patterns (Task 2)
+#flashcards/structure/writing-patterns/task-2/introduction-templates
+#flashcards/structure/writing-patterns/task-2/opinion-argumentation
+#flashcards/structure/writing-patterns/task-2/problem-solution-patterns
+#flashcards/structure/writing-patterns/task-2/counter-argument
+
+# Speaking Patterns
+#flashcards/structure/speaking-patterns/part-1
+#flashcards/structure/speaking-patterns/part-2
+#flashcards/structure/speaking-patterns/part-3
+-->
+
 ---
-name: english-grammar
-description: English grammar analysis skill. Used when filling content for structure files in Obsidian vault following the standard template.
-allowed-tools: Read, Write, Edit
+tags:
+  - structure
+aliases: [] # common variations or shortened forms of the pattern
+status: pending
+ref: [[Cam 20 Listening Test 01]]
+
+ref:
+
 ---
-
-# English Grammar Analysis Skill
-
-Guide to analyzing and presenting English grammar structures in Obsidian format.
-
-## ⛔ CRITICAL: Tool Restrictions
-
-> [!CAUTION] Token Optimization
-> - Use internal knowledge only
-> - Read template from: `{pluginBase}/assets/tpl_Structure.md`
-- Use the find_by_name tool to locate the template if the path is not absolute
-- Filename Handling: Use provided paths directly with the Read tool. DO NOT search for files.
-- Special Characters: Filenames may contain `,`, `’`, `+`, `___`, or be very long. Treat as literal strings.
-- DO NOT search for files - paths are provided explicitly or should be found once.
-
-## When to Use This Skill
-
-- Analyzing a new grammar structure
-- Filling content into structure template
-- Creating flashcards for Spaced Repetition
-
-## Template Location
-
-**Path:** `{pluginBase}/assets/tpl_Structure.md`
-
-When generating content:
-1. Read the template file from the path above
-2. The template now includes a hierarchical tag structure at the top (e.g., `#flashcards/structure/grammar-foundation`)
-3. Replace `{{STRUCTURE_NAME}}` with the actual structure name
-4. Fill in all `...` placeholders
-5. Populate `aliases: []` with common variations, alternative names, or related terminology.
-   - Formatting: Use common YAML array format without unnecessary quotes (e.g. `[term1, term2, term3]`). ONLY use quotes if the term contains special YAML characters.
-   - Cleanup: REMOVE any trailing comments (e.g., `# common variations...`) from the `aliases` line after populating it.
-6. Update `status: pending` → `status: done`
-7. The template uses `tags: [structure]` and `status: pending` in frontmatter
-
-## Structure Types Reference
-
-| Type | Description | Example |
-|------|-------------|---------|
-| **Pattern** | Fixed sentence pattern | `The more... the more...` |
-| **Idiom** | Idiomatic expression | `Break the ice` |
-| **Phrasal Verb** | Verb + particle | `Look forward to` |
-| **Collocation** | Common word combination | `Make a decision` |
-
-## Writing Formulas/Patterns
-
-Use these symbols:
-- `[Subject]`, `[Verb]`, `[V-ing]`, `[V-ed]`, `[Noun]`, `[Adj]`
-- `+` - Connector
-
-**Example:** `[Subject] + would rather + [V-inf] + than + [V-inf]`
-
-## CEFR Level Guidelines
-
-| Level | Characteristics | Example |
-|-------|-----------------|---------|
-| A1 | Beginner | `There is/are` |
-| A2 | Elementary | `Going to + V` |
-| B1 | Intermediate | `Used to + V` |
-| B2 | Upper Intermediate | `Had better + V` |
-| C1 | Advanced | `Were it not for...` |
-| C2 | Proficiency | `Scarcely... when...` |
-
-## Output Format
-
-> [!IMPORTANT] Strict Standard Adherence
-> You MUST strictly follow the flashcard format defined in `assets/Structure_Flashcard_Standards.md` (which is reflected in the template).
-> - Generate exactly **10 Cards** as per the standard.
-> - Use the exact icons and formatting (bold headers, empty lines) as specified.
-
-## Template
 
 > [!info] Structural Analysis
 > **Structure Type:** (Question / Statement / Idiom / Pattern)
@@ -257,14 +218,3 @@ Use these symbols:
 > 👨‍🎨 **Director's Note:** <Why this captures the emotion (VN)>
 
 ---
-
-## Output Requirements
-
-> [!IMPORTANT] Strict Standard Adherence
-> You MUST strictly follow the flashcard format defined in the template above.
-> - Generate exactly **10 Cards** as per the standard.
-> - Use the exact icons and formatting (bold headers, empty lines) as specified.
-> - **MANDATORY:** You MUST include the `?` separator line between the Question and Answer part of each card.
-> - Fill `[[ structure ]]` with real concepts (use `|` for alias: `[[take sb|st around]]`)
-> - **Relations/Connections MUST be 2+ words**
-> - Update `status: pending` → `status: done`

@@ -16,16 +16,18 @@ Analyze a batch of English vocabulary words and fill in the templates for each f
 
 ## ⛔ CRITICAL: Tool Restrictions
 
-> - Use your **internal knowledge only**
+> - Use your internal knowledge only
 > - Use the template provided in the `english-vocabulary` skill
+> - Filename Handling: Use the provided path directly with the Read tool. VOID using `find_by_name` or `search` for these files.
+> - Special Characters: Filenames may contain `,`, `’`, `+`, `___`, or be very long. Treat the path as a literal string.
 > - ALLOWED TOOLS Only use Read, Write, Edit, and basic file system tools
 
 ## 🛠️ Tool Usage (Mandatory)
-- You MUST use the **Write** or **Edit** tool to save your changes.
-- **DO NOT** output the file content as text or code blocks.
-- **DO NOT** output shell commands (e.g., `cat > ...`).
+- You MUST use the Write or Edit tool to save your changes.
+- DO NOT output the file content as text or code blocks.
+- DO NOT output shell commands (e.g., `cat > ...`).
 - If you process 15 files, you must call the write tool 15 times.
-- **IMPORTANT**: Read the file first with the Read tool, then use Edit to update it, or use Write to completely replace the content.
+- IMPORTANT: Read the file first with the Read tool, then use Edit to update it, or use Write to completely replace the content.
 
 ## Capabilities
 
@@ -41,10 +43,11 @@ Analyze a batch of English vocabulary words and fill in the templates for each f
 ## Response Approach
 1. Locate the template file `tpl_Vocabulary.md` in the folder:
    a. Use `find_by_name` to get the absolute path of `tpl_Vocabulary.md` if not provided.
-   b. **Read** the template content to use as a reference.
-2. **For EACH file** in the provided batch:
-   a. Use the **Read** tool to read the file content
-   b. Extract the word from the filename
+   b. Read the template content to use as a reference.
+2. For EACH file in the provided batch:
+   a. Use the Read tool to read the file content using the ENTIRE PATH provided.
+   b. Extract the word from the filename (e.g., `word.md` -> `word`).
+      - If the filename is a long phrase or contains placeholders (e.g., `___`), extract the core keyword as the `{{WORD}}` for the content.
    c. Check if the file has the hierarchical tag at the top
       - If missing or if there is a pending comment block:
         i. Select the most appropriate tag from the commented options based on the word's category
@@ -57,11 +60,11 @@ Analyze a batch of English vocabulary words and fill in the templates for each f
    e. Fill each section using your internal knowledge
    f. Generate strictly 12 flashcards as defined in the template
    g. Update `status: pending` → `status: done`
-   h. Use the **Write** tool to save the updated content back to the file
+   h. Use the Write tool to save the updated content back to the file
 3. Report summary of processed files
-4. **IMPORTANT FIELDS:** Ensure all sections and flashcard fields are filled:
+4. IMPORTANT FIELDS: Ensure all sections and flashcard fields are filled:
    - Main section: Include "💡 Word Vibe & Story" with Personality, Memory Hook, and Etymology Story
-   - Card 1: "Meaning & Mental Model" - add "🧠 **Mental Model:** <Short Vietnamese explanation using English keywords>"
+   - Card 1: "Meaning & Mental Model" - add "🧠 Mental Model: <Short Vietnamese explanation using English keywords>"
    - Card 3: "Usage & Analysis" - add analysis of why the word works
    - Card 4: "Collocations by Logic" - group by logic type with VN notes
    - Card 5: "Word Upgrade" card (The "Writer's Rewrite")
@@ -75,10 +78,10 @@ Analyze a batch of English vocabulary words and fill in the templates for each f
 
 ## Output Format
 - Keep exact callout format (`> [!info]`, etc.)
-- **MANDATORY:** Include the `?` separator line between Question and Answer in flashcards
+- Mandatory: Include the `?` separator line between Question and Answer in flashcards
 - Fill `[[ word ]]` with actual Obsidian links
 - DO NOT remove any sections
 
 ## Default Output Location
-- **Suggested folder:** `./Vocabulary/`
-- **Filename:** Use the word (e.g., `eloquent.md`)
+- Suggested folder: `./Vocabulary/`
+- Filename: Use the word (e.g., `eloquent.md`)

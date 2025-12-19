@@ -45,6 +45,7 @@ Scan and fill content for English vocabulary files with `status: pending`.
 
      Configuration:
      - Plugin base: {baseDir}
+     - Filename Handling: Treat all provided filenames as literal paths. Use the Read tool directly without searching.
      - Use internal knowledge only
      - Maintain original callout format
      - Fill `[[ word ]]` with actual words
