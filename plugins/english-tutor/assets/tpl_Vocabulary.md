@@ -276,13 +276,3 @@ Analyze the root/family of **{{WORD}}**.
 > 🧱 **Contrast:** <Brief note on the difference>
 
 ---
-
-## 📈 Learning Progress
-
-**Mastery Criteria:**
-- [ ] Can define the word
-- [ ] Can pronounce correctly
-- [ ] Can use in a sentence
-- [ ] Known collocations
-- [ ] Aware of common mistakes
-- [ ] Knows antonyms
