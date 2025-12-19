@@ -7,7 +7,7 @@ Scan and fill content for English structure files with `status: pending`.
 ### Parameters
 - `--path=<path>`: Custom path to structure files directory
 - `--limit=<n>`: Limit total number of files to process
-- `--chunk=<n>`: Number of files to process per agent call (default: 10)
+- `--chunk=<n>`: Number of files to process per agent call (default: 15)
 - `--dry-run`: List files only, do not process
 - `--research`: Enable web search for additional context (uses more tokens)
 
@@ -38,7 +38,7 @@ Scan and fill content for English structure files with `status: pending`.
 ## Phase 3: Processing (Batch Mode)
 
 4. **Process Files in Batches**
-   - Logic: Group the pending files into chunks of size `--chunk` (default: 10)
+   - Logic: Group the pending files into chunks of size `--chunk` (default: 15)
    - Use Task tool with subagent_type="english-tutor:structure-analyst" (or "structure-analyst" if running locally)
    - Prompt for each BATCH: "Analyze the following grammar structure files (Batch of X):
      {list_of_filenames_in_batch}
@@ -66,7 +66,7 @@ Scan and fill content for English structure files with `status: pending`.
 ## Execution Examples
 
 ```bash
-# Process all pending files (default chunk: 10)
+# Process all pending files (default chunk: 15)
 /structure
 
 # Process with larger chunks
