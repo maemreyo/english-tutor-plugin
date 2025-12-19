@@ -49,11 +49,12 @@ Scan and fill content for English structure files with `status: pending`.
      - Maintain original callout format
      - Fill `[[ structure ]]` with real concepts
      - Populate `aliases: []` with common variations, alternative names, or related patterns (e.g. for `used to`, include `use to`, `familiar with`)
+     - Alias Formatting: Use `[a, b, c]` format (no quotes for simple words). REMOVE the trailing comment after the `aliases` line.
      - Use `|` instead of `/` inside links: `[[take sb|st around]]` (NOT `[[take sb/st around]]`)
-     - **Relations/Connections MUST be 2+ words** (e.g., `[[make sense]]`, NOT `[[make]]`)
-     - **STRICTLY generate 10 flashcards** as defined in the template
+     - Relations/Connections MUST be 2+ words (e.g., `[[make sense]]`, NOT `[[make]]`)
+     - STRICTLY generate 10 flashcards as defined in the template
      - Update `status: pending` → `status: done` for ALL files in this batch
-     - **IMPORTANT: Write all content in English**"
+     - IMPORTANT: Write all content in English**"
    - Expected output: All files in the batch updated successfully
 
 ## Phase 4: Reporting

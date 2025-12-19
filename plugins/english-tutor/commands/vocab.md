@@ -49,9 +49,10 @@ Scan and fill content for English vocabulary files with `status: pending`.
      - Maintain original callout format
      - Fill `[[ word ]]` with actual words
      - Populate `aliases: []` with variations, related terms, and synonyms (e.g. for `associate`, include `connection`, `link`, `partner`)
-     - **STRICTLY generate 12 flashcards** as defined in the template
+     - Alias Formatting: Use `[a, b, c]` format (no quotes for simple words). REMOVE the trailing comment after the `aliases` line.
+     - STRICTLY generate 12 flashcards as defined in the template
      - Update `status: pending` → `status: done` for ALL files in this batch
-     - **IMPORTANT: Write all content in English**"
+     - IMPORTANT: Write all content in English**"
    - Expected output: All files in the batch updated successfully
 
 ## Phase 4: Reporting

@@ -31,7 +31,10 @@ When generating content:
 2. The template includes a hierarchical tag structure at the top (e.g., `#flashcards/vocabulary/general`)
 3. Replace `{{WORD}}` with the actual word
 4. Fill in all `...` placeholders
-5. Populate `aliases: []` with variations, related terms, synonyms, and associated concepts
+5. Populate `aliases: []` with variations, related terms, synonyms, and associated concepts.
+- Formatting: Use common YAML array format without unnecessary quotes (e.g. `[word1, word2, word3]`). ONLY use quotes if the term contains special YAML characters.
+- Cleanup: REMOVE any trailing comments (e.g., `# common variations...`) from the `aliases` line after populating it.
+- Maintain original callout format (`> [!info]`, `> [!example]`, etc.).
 6. Update `status: pending` → `status: done`
 7. The template uses `tags: [vocabulary]` and `status: pending` in frontmatter
 

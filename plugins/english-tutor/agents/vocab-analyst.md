@@ -52,6 +52,8 @@ Analyze a batch of English vocabulary words and fill in the templates for each f
         iii. REMOVE the entire HTML comment block (`<!-- ... -->`) containing the options
    d. Ensure frontmatter has `tags: [vocabulary]`, `status: pending`, and `aliases: []`
       - Populate `aliases: [...]` with all useful variations: Plurals, Tenses, POS variations (noun/adj/adv), Possessives, Irregular forms (e.g., `went`, `mice`), related variations, synonyms, and associated concepts (e.g., for `associate`, include `connect`, `link`, `partnership`).
+      - IMPORTANT: Use plain JSON-like array format `[term1, term2]`. Do not use quotes for simple words unless they contain special characters.
+      - IMPORTANT: Remove the trailing comment after the `aliases: []` line (i.e., remove everything after `#`).
    e. Fill each section using your internal knowledge
    f. Generate strictly 12 flashcards as defined in the template
    g. Update `status: pending` → `status: done`

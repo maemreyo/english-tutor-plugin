@@ -50,7 +50,9 @@ Analyze a batch of English grammar structures and fill in the templates for each
         ii. Replace the top line (or add the tag) at the beginning of the file
         iii. REMOVE the entire HTML comment block (`<!-- ... -->`) containing the options
    d. Ensure frontmatter has `tags: [structure]`, `status: pending`, and `aliases: []`
-      - Populate `aliases: [...]` with common variations, shortened forms, alternative names, or related grammatical patterns to improve internal linking
+      - Populate the `aliases: []` field with variations and alternative names.
+      - IMPORTANT: Use plain JSON-like array format `[term1, term2]`. Do not use quotes for simple words unless they contain special characters.
+      - IMPORTANT: Remove the trailing comment after the `aliases: []` line (i.e., remove everything after `#`).
    e. Fill each section using your internal knowledge
    f. Update `status: pending` → `status: done`
    g. Use the **Write** tool to save the updated content back to the file

@@ -31,7 +31,9 @@ When generating content:
 2. The template now includes a hierarchical tag structure at the top (e.g., `#flashcards/structure/grammar-foundation`)
 3. Replace `{{STRUCTURE_NAME}}` with the actual structure name
 4. Fill in all `...` placeholders
-5. Populate `aliases: []` with variations, alternative names, or related terminology for the pattern
+5. Populate `aliases: []` with common variations, alternative names, or related terminology.
+   - Formatting: Use common YAML array format without unnecessary quotes (e.g. `[term1, term2, term3]`). ONLY use quotes if the term contains special YAML characters.
+   - Cleanup: REMOVE any trailing comments (e.g., `# common variations...`) from the `aliases` line after populating it.
 6. Update `status: pending` → `status: done`
 7. The template uses `tags: [structure]` and `status: pending` in frontmatter
 
