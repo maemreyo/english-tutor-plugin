@@ -42,11 +42,12 @@ Scan and fill content for English vocabulary files with `status: pending`.
    - Parallel Execution: If there are 2 or more batches, trigger all Task calls in parallel (concurrently) to maximize efficiency.
    - Use Task tool with subagent_type="english-tutor:vocab-analyst" (or "vocab-analyst" if running locally)
    - Prompt for each BATCH: "Analyze the following vocabulary files (Batch of X):
-     {list_of_filenames_in_batch}
+     {list_of_FULL_ABSOLUTE_PATHS_in_batch}
 
      Configuration:
      - Plugin base: {baseDir}
      - Filename Handling: Treat all provided filenames as literal paths. Use the Read tool directly without searching.
+     - IMPORTANT: Use the FULL ABSOLUTE PATHS provided above with the Read tool
      - Use internal knowledge only
      - Maintain original callout format
      - Fill `[[ word ]]` with actual words
