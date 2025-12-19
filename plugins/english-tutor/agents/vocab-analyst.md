@@ -45,8 +45,9 @@ Analyze a batch of English vocabulary words and fill in the templates for each f
    a. Use `find_by_name` to get the absolute path of `tpl_Vocabulary.md` if not provided.
    b. Read the template content to use as a reference.
 2. For EACH file in the provided batch:
-   a. Use the Read tool to read the file content using the ENTIRE PATH provided.
-   b. Extract the word from the filename (e.g., `word.md` -> `word`).
+   a. COPY the EXACT full path from the prompt (e.g., `/Users/.../filename.md`)
+   b. Use the Read tool with this EXACT path. DO NOT modify or shorten the path.
+   c. Extract the word from the filename (e.g., `word.md` -> `word`).
       - If the filename is a long phrase or contains placeholders (e.g., `___`), extract the core keyword as the `{{WORD}}` for the content.
    c. Check if the file has the hierarchical tag at the top
       - If missing or if there is a pending comment block:

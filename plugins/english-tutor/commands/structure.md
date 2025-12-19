@@ -41,23 +41,23 @@ Scan and fill content for English structure files with `status: pending`.
    - Logic: Group the pending files into chunks of size `--chunk` (default: 15)
    - Parallel Execution: If there are 2 or more batches, trigger all Task calls in parallel (concurrently) to maximize efficiency.
    - Use Task tool with subagent_type="english-tutor:structure-analyst" (or "structure-analyst" if running locally)
-   - Prompt for each BATCH: "Analyze the following grammar structure files (Batch of X):
+   - Prompt for each BATCH: "Process these grammar structure files:
+
+     FILES TO PROCESS (use these EXACT paths with Read tool):
      {list_of_FULL_ABSOLUTE_PATHS_in_batch}
 
-     Configuration:
-     - Plugin base: {baseDir}
-     - Filename Handling: Treat all provided filenames as literal paths. Use the Read tool directly without searching.
-     - IMPORTANT: Use the FULL ABSOLUTE PATHS provided above with the Read tool
+     CRITICAL: Copy-paste each path EXACTLY as shown above when calling Read().
+     Example: Read('/Users/trung.ngo/.../filename.md') - use the FULL path, not a shortened version.
+
+     Rules:
      - Use internal knowledge only
-     - Maintain original callout format
-     - Fill `[[ structure ]]` with real concepts
-     - Populate `aliases: []` with common variations, alternative names, or related patterns (e.g. for `used to`, include `use to`, `familiar with`)
-     - Alias Formatting: Use `[a, b, c]` format (no quotes for simple words). REMOVE the trailing comment after the `aliases` line.
-     - Use `|` instead of `/` inside links: `[[take sb|st around]]` (NOT `[[take sb/st around]]`)
-     - Relations/Connections MUST be 2+ words (e.g., `[[make sense]]`, NOT `[[make]]`)
-     - STRICTLY generate 10 flashcards as defined in the template
-     - Update `status: pending` → `status: done` for ALL files in this batch
-     - IMPORTANT: Write all content in English**"
+     - Fill [[ structure ]] with real concepts
+     - Populate aliases: [] with variations (no quotes, remove trailing comment)
+     - Use | instead of / inside links: [[take sb|st around]]
+     - Relations MUST be 2+ words: [[make sense]], NOT [[make]]
+     - Generate EXACTLY 10 flashcards
+     - Update status: pending → status: done
+     - Write all content in English"
    - Expected output: All files in the batch updated successfully
 
 ## Phase 4: Reporting

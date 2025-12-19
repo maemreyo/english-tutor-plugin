@@ -41,21 +41,21 @@ Scan and fill content for English vocabulary files with `status: pending`.
    - Logic: Group the pending files into chunks of size `--chunk` (default: 15)
    - Parallel Execution: If there are 2 or more batches, trigger all Task calls in parallel (concurrently) to maximize efficiency.
    - Use Task tool with subagent_type="english-tutor:vocab-analyst" (or "vocab-analyst" if running locally)
-   - Prompt for each BATCH: "Analyze the following vocabulary files (Batch of X):
+   - Prompt for each BATCH: "Process these vocabulary files:
+
+     FILES TO PROCESS (use these EXACT paths with Read tool):
      {list_of_FULL_ABSOLUTE_PATHS_in_batch}
 
-     Configuration:
-     - Plugin base: {baseDir}
-     - Filename Handling: Treat all provided filenames as literal paths. Use the Read tool directly without searching.
-     - IMPORTANT: Use the FULL ABSOLUTE PATHS provided above with the Read tool
-     - Use internal knowledge only
-     - Maintain original callout format
-     - Fill `[[ word ]]` with actual words
-     - Populate `aliases: []` with variations, related terms, and synonyms (e.g. for `associate`, include `connection`, `link`, `partner`)
-     - Alias Formatting: Use `[a, b, c]` format (no quotes for simple words). REMOVE the trailing comment after the `aliases` line.
-     - STRICTLY generate 12 flashcards as defined in the template
-     - Update `status: pending` → `status: done` for ALL files in this batch
-     - IMPORTANT: Write all content in English**"
+     CRITICAL: Copy-paste each path EXACTLY as shown above when calling Read().
+     Example: Read('/Users/trung.ngo/.../filename.md') - use the FULL path, not a shortened version.
+
+     Rules:
+     - Use internal knowledge only (no web search)
+     - Fill [[ word ]] with actual words
+     - Populate aliases: [] with variations (no quotes, remove trailing comment)
+     - Generate EXACTLY 12 flashcards
+     - Update status: pending → status: done
+     - Write all content in English"
    - Expected output: All files in the batch updated successfully
 
 ## Phase 4: Reporting
