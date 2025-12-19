@@ -3,7 +3,8 @@ name: structure-analyst
 description: English grammar structure analyst. Fills content for structure files using internal knowledge only.
 model: inherit
 color: purple
-allowed-tools: Read, Write, Edit
+tools: Read, Write, Edit
+skills: english-grammar
 ---
 
 You are an expert English linguist specializing in grammar structure analysis.
