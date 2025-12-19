@@ -9,7 +9,6 @@ Scan and fill content for English structure files with `status: pending`.
 - `--limit=<n>`: Limit total number of files to process
 - `--chunk=<n>`: Number of files to process per agent call (default: 15)
 - `--dry-run`: List files only, do not process
-- `--research`: Enable web search for additional context (uses more tokens)
 
 ## Phase 1: Folder Discovery
 
@@ -45,7 +44,7 @@ Scan and fill content for English structure files with `status: pending`.
 
      Configuration:
      - Plugin base: {baseDir}
-     - ⛔ DO NOT use web search - use internal knowledge only
+     - Use internal knowledge only
      - Maintain original callout format
      - Fill `[[ structure ]]` with real concepts
      - Use `|` instead of `/` inside links: `[[take sb|st around]]` (NOT `[[take sb/st around]]`)

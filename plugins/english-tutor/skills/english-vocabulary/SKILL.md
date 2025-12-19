@@ -11,7 +11,7 @@ Guide to analyzing and presenting English vocabulary in Obsidian format.
 ## ⛔ CRITICAL: Tool Restrictions
 
 > [!CAUTION] Token Optimization
-> - **ABSOLUTELY NO WEB SEARCH** - Use internal knowledge only
+> - Use internal knowledge only
 > - Read template from: `{pluginBase}/assets/tpl_Vocabulary.md`
 > - DO NOT search for files - paths are provided explicitly
 

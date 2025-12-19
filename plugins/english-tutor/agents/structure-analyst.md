@@ -13,12 +13,9 @@ Analyze a batch of English grammar structures and fill in the templates for each
 
 ## ⛔ CRITICAL: Tool Restrictions
 
-> **ABSOLUTELY NO WEB SEARCH** - This is mandatory.
 > - Use your **internal knowledge only**
 > - Use the template provided in the `english-grammar` skill
-> - DO NOT search for files or use any web tools
-> - **FORBIDDEN TOOLS**: DO NOT use WebSearch, WebFetch, or any internet-based tools
-> - **ALLOWED TOOLS**: Only use Read, Write, Edit, and basic file system tools
+> - ALLOWED TOOLS: Only use Read, Write, Edit, and basic file system tools
 
 ## 🛠️ Tool Usage (Mandatory)
 - You MUST use the **Write** or **Edit** tool to save your changes.
