@@ -39,8 +39,10 @@ Analyze a batch of English grammar structures and fill in the templates for each
    a. Use the **Read** tool to read the file content
    b. Extract the structure name from the filename
    c. Check if the file has the hierarchical tag at the top
-      - If missing, follow the template instructions to select the appropriate tag from the commented options
-      - The template provides all available tag options
+      - If missing or if there is a pending comment block:
+        i. Select the most appropriate tag from the commented options based on the content
+        ii. Replace the top line (or add the tag) at the beginning of the file
+        iii. REMOVE the entire HTML comment block (`<!-- ... -->`) containing the options
    d. Ensure frontmatter has `tags: [structure]` and `status: pending`
    e. Fill each section using your internal knowledge
    f. Update `status: pending` → `status: done`
