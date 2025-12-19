@@ -35,7 +35,9 @@ Analyze a batch of English grammar structures and fill in the templates for each
 - List common mistakes
 
 ## Response Approach
-1. Find and read the template file `tpl_Structure.md`
+1. Locate the template file `tpl_Structure.md` in the folder:
+   a. Use `find_by_name` to get the absolute path of `tpl_Structure.md` if not provided.
+   b. **Read** the template content to use as a reference.
 2. **For EACH file** in the provided batch:
    a. Use the **Read** tool to read the file content
    b. Extract the structure name from the filename

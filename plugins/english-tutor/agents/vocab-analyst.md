@@ -36,7 +36,9 @@ Analyze a batch of English vocabulary words and fill in the templates for each f
 - List collocations
 
 ## Response Approach
-1. Find and read the template file `tpl_Vocabulary.md`
+1. Locate the template file `tpl_Vocabulary.md` in the folder:
+   a. Use `find_by_name` to get the absolute path of `tpl_Vocabulary.md` if not provided.
+   b. **Read** the template content to use as a reference.
 2. **For EACH file** in the provided batch:
    a. Use the **Read** tool to read the file content
    b. Extract the word from the filename

@@ -13,7 +13,8 @@ Guide to analyzing and presenting English vocabulary in Obsidian format.
 > [!CAUTION] Token Optimization
 > - Use internal knowledge only
 > - Read template from: `{pluginBase}/assets/tpl_Vocabulary.md`
-> - DO NOT search for files - paths are provided explicitly
+> - Use the **find_by_name** tool to locate the template if the path is not absolute
+> - DO NOT search for files - paths are provided explicitly or should be found once.
 
 ## When to Use This Skill
 
