@@ -30,8 +30,9 @@ When generating content:
 2. The template now includes a hierarchical tag structure at the top (e.g., `#flashcards/structure/grammar-foundation`)
 3. Replace `{{STRUCTURE_NAME}}` with the actual structure name
 4. Fill in all `...` placeholders
-5. Update `status: pending` → `status: done`
-6. The template uses `tags: [structure]` and `status: pending` in frontmatter
+5. Populate `aliases: []` with common variations or shortened forms of the pattern
+6. Update `status: pending` → `status: done`
+7. The template uses `tags: [structure]` and `status: pending` in frontmatter
 
 ## Structure Types Reference
 

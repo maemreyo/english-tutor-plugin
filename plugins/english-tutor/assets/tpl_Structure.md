@@ -25,10 +25,14 @@ Select one of the following tags to replace the line above:
 #flashcards/structure/speaking-patterns/part-2
 #flashcards/structure/speaking-patterns/part-3
 -->
+
 ---
 tags:
   - structure
+aliases: [] # common variations or shortened forms of the pattern
 status: pending
+ref:
+
 ---
 
 > [!info] Structural Analysis

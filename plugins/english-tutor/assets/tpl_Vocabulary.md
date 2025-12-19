@@ -82,13 +82,15 @@ Select one of the following tags to replace the line above:
 #flashcards/vocabulary/phrasal-idioms/collocations-by-topic
 #flashcards/vocabulary/phrasal-idioms/idioms-for-speaking
 -->
+
 ---
 tags:
   - vocabulary
+aliases: [] # Variations to link: Plurals (passengers), Tenses (portioned, portioning), POS (portionable, portionally), Possessives (portion's), Irregulars (went, mice)
 status: pending
----
+ref:
 
-# {{WORD}}
+---
 
 > [!info] Word Analysis
 > **IPA:** /  /

@@ -47,6 +47,7 @@ Scan and fill content for English vocabulary files with `status: pending`.
      - Use internal knowledge only
      - Maintain original callout format
      - Fill `[[ word ]]` with actual words
+     - Populate `aliases: []` with useful variations (plurals, tenses, POS, etc.)
      - **STRICTLY generate 12 flashcards** as defined in the template
      - Update `status: pending` → `status: done` for ALL files in this batch
      - **IMPORTANT: Write all content in English**"
