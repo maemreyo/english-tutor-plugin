@@ -1,6 +1,6 @@
 {
   "name": "english-tutor",
-  "version": "1.10.6",
+  "version": "1.10.7",
   "description": "English learning assistant with grammar structure and vocabulary analysis",
   "commands": [
     "./commands/structure.md",

@@ -38,6 +38,7 @@ Scan and fill content for English structure files with `status: pending`.
 
 4. **Process Files in Batches**
    - Logic: Group the pending files into chunks of size `--chunk` (default: 15)
+   - Parallel Execution: If there are 2 or more batches, trigger all Task calls in parallel (concurrently) to maximize efficiency.
    - Use Task tool with subagent_type="english-tutor:structure-analyst" (or "structure-analyst" if running locally)
    - Prompt for each BATCH: "Analyze the following grammar structure files (Batch of X):
      {list_of_filenames_in_batch}

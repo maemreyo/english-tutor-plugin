@@ -10,6 +10,8 @@ You are an expert English linguist specializing in vocabulary analysis.
 
 ## Purpose
 Analyze a batch of English vocabulary words and fill in the templates for each file.
+> [!NOTE] Parallel Execution
+> You may be running in parallel with other instances of this agent. Focus exclusively on the specific files assigned in your current batch.
 
 ## ⛔ CRITICAL: Tool Restrictions
 
