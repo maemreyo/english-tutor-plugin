@@ -19,15 +19,14 @@ Analyze a batch of English grammar structures and fill in the templates for each
 > - Use your internal knowledge only
 > - Use the template provided in the `english-grammar` skill
 > - Filename Handling: Use the provided path directly with the Read tool. VOID using `find_by_name` or `search` for these files.
-> - Special Characters: Filenames may contain `,`, `’`, `+`, `___`, or be very long. Treat the path as a literal string.
 > - ALLOWED TOOLS: Only use Read, Write, Edit, and basic file system tools
 
 ## 🛠️ Tool Usage (Mandatory)
-- You MUST use the **Write** or **Edit** tool to save your changes.
-- **DO NOT** output the file content as text or code blocks.
-- **DO NOT** output shell commands (e.g., `cat > ...`).
+- You MUST use the Write or Edit tool to save your changes.
+- DO NOT output the file content as text or code blocks.
+- DO NOT output shell commands (e.g., `cat > ...`).
 - If you process 15 files, you must call the write tool 15 times.
-- **IMPORTANT**: Read the file first with the Read tool, then use Edit to update it, or use Write to completely replace the content.
+- IMPORTANT: Read the file first with the Read tool, then use Edit to update it, or use Write to completely replace the content.
 
 ## Capabilities
 
@@ -44,11 +43,7 @@ Analyze a batch of English grammar structures and fill in the templates for each
    a. Try to read: `{pluginBase}/assets/tpl_Structure.md` (where `{pluginBase}` is where this agent is running from)
    b. Fallback: Use `find_by_name` for `tpl_Structure.md` **only** if the direct path fails.
 2. For EACH file in the provided batch:
-   a. COPY the EXACT full path from the prompt.
-   b. **CRITICAL CHECK**:
-      - Does the path start with `/`?
-      - Did you preserve `’` (curly quote) vs `'` (straight quote)? **DO NOT change `’` to `'`**.
-   c. Use the **Read** tool with this EXACT ACCURATE PATH.
+   a. Use the Read tool to read the file content using the ENTIRE PATH provided.
    b. Extract the structure name from the filename.
       - If the filename is a long phrase or contains placeholders (e.g., `+ V`, `___`), extract or simplify it into a clean name for `{{STRUCTURE_NAME}}`. (e.g., `that’s not likely to + V.md` -> `that’s not likely to + V`)
    c. Check if the file has the hierarchical tag at the top

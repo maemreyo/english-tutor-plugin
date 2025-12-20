@@ -14,9 +14,7 @@ Guide to analyzing and presenting English vocabulary in Obsidian format.
 > - Use internal knowledge only
 > - Read template from: `{pluginBase}/assets/tpl_Vocabulary.md`
 > - Use the find_by_name tool to locate the template if the path is not absolute
-> - Filename Handling: Use provided paths directly with the Read tool. DO NOT search for files.
-> - Special Characters: Filenames may contain `,`, `’`, `+`, `___`, or be very long. Treat as literal strings.
-> - DO NOT search for files - paths are provided explicitly or should be found once.
+> - Filename Handling: Use provided paths directly with the Read tool.
 
 ## When to Use This Skill
 

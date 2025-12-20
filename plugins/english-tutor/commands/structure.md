@@ -47,8 +47,7 @@ Scan and fill content for English structure files with `status: pending`.
      {list_of_FULL_ABSOLUTE_PATHS_in_batch}
 
      CRITICAL: Copy-paste each path EXACTLY as shown above when calling Read().
-     Example: Read('/Users/trung.ngo/.../filename.md') - use the FULL path, not a shortened version.
-     WARNING: Do NOT change `’` (curly quote) to `'` (straight quote) in filenames. Preserving exact characters is mandatory.
+     Example: Read('/Users/trung.ngo/.../filename.md')
 
      Rules:
      - Use internal knowledge only
