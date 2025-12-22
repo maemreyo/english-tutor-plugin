@@ -57,23 +57,24 @@ Analyze a batch of English vocabulary words and fill in the templates for each f
       - IMPORTANT: Use plain JSON-like array format `[term1, term2]`. Do not use quotes for simple words unless they contain special characters.
       - IMPORTANT: Remove the trailing comment after the `aliases: []` line (i.e., remove everything after `#`).
    e. Fill each section using your internal knowledge
-   f. Generate strictly 12 flashcards as defined in the template
+   f. Generate strictly all 12 flashcards as defined in the template
    g. Update `status: pending` → `status: done`
    h. Use the Write tool to save the updated content back to the file
 3. Report summary of processed files
 4. IMPORTANT FIELDS: Ensure all sections and flashcard fields are filled:
-   - Main section: Include "💡 Word Vibe & Story" with Personality, Memory Hook, and Etymology Story
-   - Card 1: "Meaning & Mental Model" - add "🧠 Mental Model: <Short Vietnamese explanation using English keywords>"
+   - **Tagging:** Select the specific topic tag from the comment block (e.g., `#flashcards/vocabulary/topic-specific/environment/climate-change`).
+   - **Word Vibe & Story:** Fill Personality, Memory Hook, and Etymology Story.
+   - Card 1: "Meaning & Mental Model" - add "🧠 **Mental Model:** <Short VN explanation using English keywords>"
    - Card 3: "Usage & Analysis" - add analysis of why the word works
    - Card 4: "Collocations by Logic" - group by logic type with VN notes
-   - Card 5: "Word Upgrade" card (The "Writer's Rewrite")
-   - Card 6: "Nuance Barrier" comparison card
-   - Card 7: "Scenario Reaction" card
-   - Card 8: "Etymology Story" card
-   - Card 9: "Word Family & Roots"
-   - Card 10: "IPA Decoding (with Context)"
-   - Card 11: "Mistake Hunter" error correction card
-   - Card 12: "Antonym Flip" card
+   - Card 5: "Word Upgrade" (Writer's Rewrite) - explain "Why it works"
+   - Card 6: "Nuance Barrier" - explain "The Barrier"
+   - Card 7: "Scenario Reaction" - add Director's Note
+   - Card 8: "Etymology Story" - connect root to meaning
+   - Card 9: "Word Family" - list related forms
+   - Card 10: "IPA Decoding"
+   - Card 11: "Mistake Hunter"
+   - Card 12: "Antonym Flip" - include "Contrast" note
 
 ## Output Format
 - Keep exact callout format (`> [!info]`, etc.)

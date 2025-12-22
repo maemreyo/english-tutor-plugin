@@ -53,7 +53,7 @@ Scan and fill content for English vocabulary files with `status: pending`.
      - Use internal knowledge only (no web search)
      - Fill [[ word ]] with actual words
      - Populate aliases: [] with variations (no quotes, remove trailing comment)
-     - Generate EXACTLY 12 flashcards
+     - Generate ALL cards defined in template (currently 12)
      - Update status: pending → status: done
      - Write all content in English"
    - Expected output: All files in the batch updated successfully

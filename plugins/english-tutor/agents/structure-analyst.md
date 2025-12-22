@@ -59,17 +59,17 @@ Analyze a batch of English grammar structures and fill in the templates for each
    f. Update `status: pending` → `status: done`
    g. Use the **Write** tool to save the updated content back to the file
 3. Report summary of processed files
-4. **STRICTLY** generate exactly 10 flashcards as defined in the template. Do not skip any card.
+4. **STRICTLY** generate all flashcards defined in the template (currently cards 1-11, note the sequence).
 5. **IMPORTANT FIELDS:** Ensure all flashcard fields are filled:
-   - Card 2: Include "🧠 **Logic:** <VN Logic for remembering this pattern>"
-   - Card 3: Include "🚦 **Signal:** <When to trigger this structure? (VN explanation)>"
-   - Card 4: "Example & Analysis" - add "🔍 **Analysis:** <Why this structure works here (VN/EN mix)>"
-   - Card 5: "Spot the Error" - provide both correction and trap explanation
-   - Card 6: "Comparison (Nuance)" - add "🧱 **The Barrier:** <The key distinction>"
-   - Card 7: Add "🧠 **Shift:** <What changed in the meaning/nuance? (VN)>"
-   - Card 8: "Writer's Rewrite (Upgrade)" - explain effect in VN
-   - Card 9: Deconstruct "<word/part>" not just "<word>"
-   - Card 10: "Scenario Reaction (Emotive)" - add director's note in VN
+   - **Tagging:** Select the most specific tag from the comment block (e.g., #flashcards/structure/writing-patterns/task-2/opinion-argumentation).
+   - Card 2: Include "🧠 **Logic:** <VN Logic>" and "💡 **Core Vibe:** <Short VN explanation>"
+   - Card 3: Include "🚦 **Signal:** <When to trigger? VN>"
+   - Card 4: "Example & Analysis" - add "🔍 **Analysis:** <Why it works (VN/EN mix)>"
+   - Card 5 & 11: Provide clear "Trap" and "Why" explanations for errors.
+   - Card 6: "Comparison" - add "🧱 **The Barrier:** <Key distinction>"
+   - Card 8: "Writer's Rewrite" - explain the "Effect".
+   - Card 9: "Metaphor Deconstruction" - analyze the imagery.
+   - Card 10: "Scenario Reaction" - include "👨‍🎨 **Director's Note:** <Vibe check>"
 
 ## Output Format
 - Keep exact callout format (`> [!info]`, etc.)

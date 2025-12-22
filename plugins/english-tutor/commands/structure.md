@@ -55,7 +55,7 @@ Scan and fill content for English structure files with `status: pending`.
      - Populate aliases: [] with variations (no quotes, remove trailing comment)
      - Use | instead of / inside links: [[take sb|st around]]
      - Relations MUST be 2+ words: [[make sense]], NOT [[make]]
-     - Generate EXACTLY 10 flashcards
+     - Generate ALL cards defined in template (currently 11)
      - Update status: pending → status: done
      - Write all content in English"
    - Expected output: All files in the batch updated successfully
