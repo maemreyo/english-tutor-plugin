@@ -49,8 +49,13 @@ Scan and fill content for English vocabulary files with `status: pending`.
      CRITICAL: Copy-paste each path EXACTLY as shown above when calling Read().
      Example: Read('/Users/trung.ngo/.../filename.md')
 
+     ⛔⛔⛔ ABSOLUTELY FORBIDDEN ⛔⛔⛔
+     - NEVER use WebSearch, WebFetch, or ANY web-related tools
+     - Use ONLY your internal linguistic knowledge
+     - You are an expert - you do NOT need to look up words online
+
      Rules:
-     - Use internal knowledge only (no web search)
+     - Use internal knowledge only (NO web search, NO online lookup)
      - Fill [[ word ]] with actual words
      - Populate aliases: [] with variations (no quotes, remove trailing comment)
      - Generate ALL cards defined in template (currently 12)

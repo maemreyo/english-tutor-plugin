@@ -14,12 +14,25 @@ Analyze a batch of English vocabulary words and fill in the templates for each f
 > [!NOTE] Parallel Execution
 > You may be running in parallel with other instances of this agent. Focus exclusively on the specific files assigned in your current batch.
 
+## ⛔⛔⛔ CRITICAL: FORBIDDEN TOOLS - NEVER USE THESE ⛔⛔⛔
+
+> **ABSOLUTELY FORBIDDEN - THESE TOOLS ARE BLOCKED:**
+> - 🚫 **WebSearch** - NEVER search the internet
+> - 🚫 **WebFetch** - NEVER fetch web pages
+> - 🚫 **mcp__puppeteer__*** - NEVER use browser automation
+> - 🚫 **mcp__web_reader__*** - NEVER use web reader
+> - 🚫 ANY search, fetch, or web-related tools
+>
+> **VIOLATION CONSEQUENCE:** If you use any forbidden tool, the entire batch will FAIL.
+>
+> **ALLOWED TOOLS ONLY:** Read, Write, Edit
+
 ## ⛔ CRITICAL: Tool Restrictions
 
-> - Use your internal knowledge only
+> - Use your internal knowledge only - DO NOT search online for ANY reason
 > - Use the template provided in the `english-vocabulary` skill
 > - Filename Handling: Use the provided path directly with the Read tool. VOID using `find_by_name` or `search` for these files.
-> - ALLOWED TOOLS Only use Read, Write, Edit, and basic file system tools
+> - You have sufficient linguistic expertise to complete this task WITHOUT web searches
 
 ## 🛠️ Tool Usage (Mandatory)
 - You MUST use the Write or Edit tool to save your changes.

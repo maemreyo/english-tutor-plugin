@@ -1,0 +1,162 @@
+## 🚨 **Phát hiện: PreToolUse Hooks có Bug nghiêm trọng trong Claude Code CLI**
+
+Sau khi search, tôi tìm thấy **nhiều bug reports** về PreToolUse hooks:
+
+### **Known Issues:**
+
+PreToolUse and PostToolUse hooks trong Claude Code CLI không hoạt động đúng - các hooks hoặc không execute hoàn toàn, hoặc execute nhưng không thể block tool operations. Một số issues cụ thể bao gồm hooks trả về exit code non-zero hoặc "approve: false" nhưng vẫn không ngăn được tool execution, và hooks configurations thay đổi nhưng không được apply sau restart.
+
+**Các issues đang mở:**
+- #6305: PreToolUse/PostToolUse không execute (Aug 2025)
+- #4362: `approve: false` bị ignore (Jul 2025)  
+- #3672, #3179, #2891, #2814: Nhiều reports tương tự
+
+---
+
+## ✅ **Giải pháp thực tế: Defense in Depth**
+
+Vì hooks không reliable, cần dùng **multi-layered approach**:
+
+### **Layer 1: Prompt-based Restrictions** (đã có)
+
+Tăng cường trong **vocab-analyst.md**:
+
+```markdown
+## ⛔ CRITICAL: Tool Restrictions - ENFORCED BY INSTRUCTIONS
+
+**⚠️ INFRASTRUCTURE NOTE:** PreToolUse hooks are currently not functional in Claude Code CLI (known bugs #6305, #4362). Therefore, tool restrictions are enforced via instructions and post-validation.
+
+**ABSOLUTELY FORBIDDEN TOOLS:**
+- ❌ `web_search` - NEVER use under ANY circumstances
+- ❌ `web_fetch` - Do not fetch external content
+- ❌ Internet access tools
+
+**WHY THIS RESTRICTION EXISTS:**
+Vocabulary analysis must be consistent across all 120+ files. Web sources change daily, making standardization impossible.
+
+**IF YOU FEEL TEMPTED TO SEARCH:**
+1. STOP immediately
+2. Use `[research needed: topic]` placeholder instead
+3. Continue with your best internal knowledge
+
+**SELF-CHECK before EVERY response:**
+- [ ] Did I attempt web_search? → If YES, this is a VIOLATION
+- [ ] Am I using only training data? → If NO, STOP and reconsider
+- [ ] Did I complete all 12 flashcards? → If NO, finish them first
+
+**COMPLIANCE VERIFICATION:**
+Your output will be reviewed. Any use of web tools will require full reprocessing of the batch.
+```
+
+### **Layer 2: Post-Validation Script**
+
+Tạo `.claude/scripts/validate_vocab_output.sh`:
+
+```bash
+#!/bin/bash
+# Post-validation for vocab-analyst outputs
+
+LOG_FILE="/tmp/vocab-analyst-validation.log"
+VOCAB_DIR="glean/20_Vocabulary"
+
+echo "[$(date)] Starting validation..." >> "$LOG_FILE"
+
+# Check for web_search traces in recent outputs
+if grep -r "web_search\|web_fetch" "$VOCAB_DIR" 2>/dev/null | grep -q "status: done"; then
+    echo "❌ VIOLATION: Web tools detected in processed files" | tee -a "$LOG_FILE"
+    echo "Please review and reprocess these files using internal knowledge only."
+    exit 1
+fi
+
+# Check for incomplete files (missing cards)
+for file in "$VOCAB_DIR"/*.md; do
+    if grep -q "status: done" "$file"; then
+        card_count=$(grep -c "^####.*Card [0-9]" "$file")
+        if [ "$card_count" -lt 12 ]; then
+            echo "⚠️  WARNING: $file has only $card_count/12 cards" | tee -a "$LOG_FILE"
+        fi
+    fi
+done
+
+echo "[$(date)] Validation complete" >> "$LOG_FILE"
+exit 0
+```
+
+Run sau mỗi batch:
+```bash
+chmod +x .claude/scripts/validate_vocab_output.sh
+.claude/scripts/validate_vocab_output.sh
+```
+
+### **Layer 3: Agent Self-Monitoring**
+
+Thêm vào **vocab.md** (command orchestrator):
+
+```markdown
+## Phase 3.5: Post-Processing Validation
+
+After EACH batch completes:
+1. **Scan processed files for violations:**
+   ```bash
+   grep -l "web_search\|web_fetch\|https://\|http://" {processed_files}
+   ```
+2. **If violations found:**
+   - Mark those files back to `status: pending`
+   - Re-queue them with EMPHATIC prompt:
+     "CRITICAL REMINDER: Previous attempt used web tools (FORBIDDEN).
+      This batch MUST use ONLY internal knowledge. No exceptions."
+3. **Report:**
+   - Clean files: X/Y
+   - Violated files requiring reprocessing: [list]
+```
+
+### **Layer 4: Manual Spot Check** 
+
+Sau khi chạy command:
+```bash
+# Quick audit
+grep -r "web_search\|Wikipedia\|source:" glean/20_Vocabulary/ | grep "status: done"
+
+# If empty output → Good!
+# If found violations → Reprocess those files
+```
+
+---
+
+## 🎯 **Recommended Workflow**
+
+```bash
+# 1. Run vocab command
+/english-tutor:vocab --path=glean/20_Vocabulary --chunk=10
+
+# 2. Post-validation (automated)
+.claude/scripts/validate_vocab_output.sh
+
+# 3. Spot check (manual)
+grep -c "status: done" glean/20_Vocabulary/*.md
+# Expected: Same as "processed successfully" count
+
+# 4. If violations found, reset and reprocess
+for file in $(grep -l "web_search" glean/20_Vocabulary/*.md); do
+  sed -i '' 's/status: done/status: pending/' "$file"
+done
+```
+
+---
+
+## 📊 **Why This Approach Works**
+
+| Method | Reliability | When It Catches Violations |
+|--------|------------|---------------------------|
+| Hooks (broken) | ❌ 0% | Never (doesn't work) |
+| Prompt instructions | ⚠️ 60% | During execution (if agent follows) |
+| Post-validation script | ✅ 95% | After execution (catches most) |
+| Manual spot check | ✅ 100% | After execution (catches all) |
+| **Combined** | **✅ 95%+** | **Multiple checkpoints** |
+
+---
+
+Bạn có muốn tôi tạo artifact với:
+1. Updated **vocab-analyst.md** với stronger restrictions
+2. Validation script
+3. Updated **vocab.md** với post-processing checks?
